@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+         <a class="nav-link" href="{{url_for('index')}}" style="color: white;">Home</a>
+      </li>
+      <li class="nav-item active">
+            <a class="nav-link" href="{{url_for('about')}}" style="color: yellow;">About</a>
+      </li>
+      <li class="nav-item">
+            <a class="nav-link" href="{{url_for('register')}}" style="color: white;">Register</a>
+      </li>
+      <li class="nav-item">
+            <a class="nav-link" href="{{url_for('login')}}" style="color: white;">Login</a>
+      </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+   <div class="about_section layout_padding">
+      <div class="container">
+         <div class="about_section_2 layout_padding">
+            <div class="image_iman">
+               <!-- <img src="/static/images/pexels-rdne-6129115.jpg" class="about_img" style="margin-top: -100px;"> -->
+            </div>
+            <div class="about_taital_box" style="margin-top: -1400px; width: 1000px;  background-color: rgba(255, 255, 255, 0.5);">
+               <h1 class="about_taital_1">AUTISM SPECTRUM DISORDER DETECTION USING MACHINE LEARNING TECHNIQUES</h1>
+               <p class=" about_text" style="text-align: justify;">
+                  Autism Spectrum Disorder (ASD) is a complex neurodevelopmental condition that affects an individual's social interaction, communication skills, and behavioral patterns.This study presents a machine learning framework for the prediction of ASD, leveraging multiple classification algorithms, including XGBoost, Random Forest, Support Vector Machine (SVM), Long Short-Term Memory (LSTM), and Stacking Classifier. The dataset used in this research is obtained from Kaggle, consisting of key behavioral and clinical features that help in distinguishing individuals with ASD from neurotypical individuals. The models are trained and evaluated using various performance metrics such as accuracy, precision, recall, F1-score, and ROC-AUC to determine their effectiveness in ASD prediction.
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+{% endblock %}

@@ -1,0 +1,192 @@
+{% extends 'index.html' %}
+
+{% block navbar %}
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('home')}}" style="color: white;">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('upload')}}" style="color: white;">Upload</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('split')}}" style="color: white;">Data split</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('model')}}" style="color: white;">Model Selection</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{url_for('prediction')}}" style="color: yellow;">Prediction</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('index')}}" style="color: white;">Logout</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="contact_section layout_padding" style="margin-top: -140px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <center>
+                        {% if msg %}
+                            <h1 style="color: white;">
+                                <div style="background-color: rgba(0, 0, 0, 0.568); width: 300px;">
+                                    Prediction : <b>{{ msg }}</b></h1>
+                                </div>
+                        {% endif %}
+                    </center>
+                    
+                    <h1 class="contact_taital">Enter data</h1>
+                    <div class="bulit_icon"><img src="/static/images/bulit-icon.png"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="contact_section_2">
+                <div class="row justify-content-center"> <!-- Centering the content -->
+                    <div class="col-md-12">
+                        <form action="{{url_for('prediction')}}" method="post">
+                            <div class="row justify-content-center">
+                                <!-- Column 1 -->
+                                <div class="col-md-3">
+                                    <select name="a1" class="mail_text custom-input" required>
+                                        <option value="-1">Prefers same routine?</option>
+                                        <option value="0">Zero</option>
+                                        <option value="1">One</option>
+                                    </select>
+                                    
+
+                                    <select name="a2" class="mail_text custom-input" required>
+                                        <option value="-1">Struggles with empathy?</option>
+                                        <option value="0">Zero</option>
+                                        <option value="1">One</option>
+                                    </select>
+                                    
+
+                                    <select name="a3" class="mail_text custom-input" required>
+                                        <option value="-1">Difficulty making friends?</option>
+                                        <option value="0">Zero</option>
+                                        <option value="1">One</option>
+                                    </select>
+                        
+
+                                    <select name="a4" class="mail_text custom-input" required>
+                                        <option value="-1">Avoids eye contact?</option>
+                                        <option value="0">Zero</option>
+                                        <option value="1">One</option>
+                                    </select>
+            
+                                </div>
+
+                                <!-- Column 2 -->
+                                <div class="col-md-3">
+                                    <select name="a5" class="mail_text custom-input" required>
+                                        <option value="-1">Repeats words/phrases?</option>
+                                        <option value="0">Zero</option>
+                                        <option value="1">One</option>
+                                    </select>
+                                
+
+                                    <select name="a6" class="mail_text custom-input" required>
+                                        <option value="-1">Upset by changes?</option>
+                                        <option value="0">Zero</option>
+                                        <option value="1">One</option>
+                                    </select>
+
+                                    <select name="a7" class="mail_text custom-input" required>
+                                        <option value="-1">Reptitive movements?</option>
+                                        <option value="0">Zero</option>
+                                        <option value="1">One</option>
+                                    </select>
+                        
+
+                                    <select name="a8" class="mail_text custom-input" required>
+                                        <option value="-1">Struggles with expressions?</option>
+                                        <option value="0">Zero</option>
+                                        <option value="1">One</option>
+                                    </select>
+                                    
+                                </div>
+
+                                <!-- Column 3 -->
+                                <div class="col-md-3">
+                                    <select name="a9" class="mail_text custom-input" required>
+                                        <option value="-1">Extreme focus on topics?</option>
+                                        <option value="0">Zero</option>
+                                        <option value="1">One</option>
+                                    </select>
+                                    
+
+                                    <select name="a10" class="mail_text custom-input" required>
+                                        <option value="-1">Finds socializing hard?</option>
+                                        <option value="0">Zero</option>
+                                        <option value="1">One</option>
+                                    </select>
+        
+
+                                    <input type="text" name="age" class="mail_text custom-input" placeholder="Enter Age" required>
+
+                                    <select name="gender" class="mail_text custom-input" required>
+                                        <option value="-1">Select an option for Gender</option>
+                                        <option value="0">Male</option>
+                                        <option value="1">Female</option>
+                                    </select>
+                                </div>
+
+                                <!-- Column 4 -->
+                                <div class="col-md-3">
+                                    <select name="jundice" class="mail_text custom-input" required>
+                                        <option value="-1">Select an option for Jaundice</option>
+                                        <option value="0">Yes</option>
+                                        <option value="1">No</option>
+                                    </select>
+
+                                    <select name="autism" class="mail_text custom-input" required>
+                                        <option value="-1">Family history of Autism</option>
+                                        <option value="0">Yes</option>
+                                        <option value="1">No</option>
+                                    </select>
+
+                                    <select name="ethnicity" class="mail_text custom-input" required>
+                                        <option value="-1">Select an option for ethnicity</option>
+                                        <option value="0">White-European</option>
+                                        <option value="1">Others</option>
+                                        <option value="2">Middle Eastern</option>
+                                        <option value="3">Asian</option>
+                                        <option value="4">Black</option>
+                                        <option value="5">South Asian</option>
+                                        <option value="6">Pasifika</option>
+                                        <option value="7">Latino</option>
+                                    </select>
+
+                                    <input type="text" name="result" class="mail_text custom-input" placeholder="Results of the exam conducted by doctor" required>
+                                </div>
+                            </div>
+
+                            <center>
+                                <button type="submit" class="btn btn-info" style="margin-top: 50px; width: 20%;">Submit</button>
+                            </center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .custom-input {
+            width: 100%;  /* Ensures inputs are responsive */
+            font-size: 0.9em;  /* Reduce font size */
+            padding: 5px;  /* Reduce padding to shrink the input boxes */
+        }
+        .col-md-3 {
+            margin-bottom: 20px;  /* Ensure spacing between inputs */
+        }
+        .row {
+            margin: 0 auto;
+        }
+    </style>
+{% endblock %}

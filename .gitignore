@@ -1,0 +1,5 @@
+Terraform_Files/terraform.tfstate
+Terraform_Files/terraform.tfstate.backup
+Terraform_Files/*terraform.lock.hcl
+Terraform_Files/.terraform/
+Terraform_Files/terraform.tfstate.1774446930.backup
